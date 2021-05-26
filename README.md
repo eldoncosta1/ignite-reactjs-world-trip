@@ -1,6 +1,6 @@
 # Worldtrip 
 
-Aplicação usando Chakra UI no Next.js
+Aplicação responsiva usando Chakra UI no Next.js
 
 ## Configurando projeto
 
