@@ -30,7 +30,10 @@ export const theme = extendTheme({
       body: {
         bg: 'light.heading',
         color: 'headings_text'
-      }
+      },
+      "svg": {
+        cursor: 'pointer',
+      },
     }
   }
 })
