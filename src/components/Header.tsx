@@ -17,12 +17,13 @@ export function Header() {
         mx="auto"
         justify="center"
         align="center"
+        maxWidth={1440}
 
       >
         {isHome > 1 ? (
           <>
             <Link href="/" passHref>
-              <Box position="absolute" left="15%">
+              <Box position="absolute" left="10%">
                 <RiArrowLeftSLine size={24} />
               </Box>
             </Link>

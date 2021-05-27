@@ -7,7 +7,7 @@ import { TravelTypes } from "../components/TravelTypes";
 
 export default function Home() {
   return (
-    <Flex direction="column" h="100vh" maxWidth={1440}>
+    <Flex direction="column" h="100vh">
       <Header />
       <Banner />
       <TravelTypes />

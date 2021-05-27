@@ -1,4 +1,4 @@
-import { Box, Image, Text } from '@chakra-ui/react'
+import { Box, Image, Text, Flex } from '@chakra-ui/react'
 
 import SwiperCore, { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 
@@ -14,6 +14,7 @@ SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
 
 export function Slider() {
   return (
+    // <Flex maxWidth={1440} m="auto">
     <Box mx="24" mt="16" pb="10">
       <Swiper
         cssMode={true}
@@ -23,14 +24,18 @@ export function Slider() {
         keyboard={true}
       >
         <SwiperSlide>
-          <Box h="450px" position="relative" align="center">
-            <Image src="/images/europa.png" alt="Europa" />
+          <Image maxWidth={1440} src="/images/europa.png" alt="Europa" objectFit="cover" />
+          <Box
+            h="auto"
+            align="center"
+            position="absolute"
+            top="50%"
+            left="50%"
+            transform="translate(-50%, -50%)"
+          >
             <Box
-              position="absolute"
-              top="50%"
-              left="50%"
-              transform="translate(-50%, -50%)"
               fontWeight="bold"
+              color="light.heading"
             >
               <Text
                 color="light.heading"
@@ -48,9 +53,35 @@ export function Slider() {
             </Box>
           </Box>
         </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>
+          <Image maxWidth={1440} src="/images/europa.png" alt="Europa" objectFit="cover" />
+          {/* <Box h="450px" position="relative" align="center">
+              <Box
+                position="absolute"
+                top="50%"
+                left="50%"
+                transform="translate(-50%, -50%)"
+                fontWeight="bold"
+                color="light.heading"
+              >
+                <Text
+                  color="light.heading"
+                  fontSize="5xl"
+                  mb="4"
+                >
+                  Europa
+              </Text>
+                <Text
+                  color="light.info"
+                  fontSize="2xl"
+                >
+                  O continente mais antigo.
+              </Text>
+              </Box>
+            </Box> */}
+        </SwiperSlide>
       </Swiper>
     </Box>
+    // </Flex>
   )
 }

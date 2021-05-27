@@ -8,7 +8,7 @@ export function BannerContinent() {
         objectFit="fill"
         w="100%"
         h="500px"
-        src="/images/banner.png"
+        src="/images/europe.png"
         alt="banner"
       />
     </Flex>

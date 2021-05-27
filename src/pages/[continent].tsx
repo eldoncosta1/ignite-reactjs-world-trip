@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 
-import { Flex, Box, Text, SimpleGrid, Image, Heading, Badge } from '@chakra-ui/react'
-import { RiStarSFill } from 'react-icons/ri'
+import { Flex, Box, Text, SimpleGrid, Image, Heading, Badge, HStack, VStack } from '@chakra-ui/react'
+import { RiInformationLine, RiStarSFill } from 'react-icons/ri'
 
 import { BannerContinent } from "../components/BannerContinent"
 import { Header } from "../components/Header"
@@ -23,105 +23,146 @@ export default function Continent({ continent }: ContinentProps) {
   }
 
   return (
-    <>
+    <Flex direction="column" h="100vh">
       <Header />
-      <BannerContinent />
-      <Flex align="center" justify="space-between">
-        <Box>
-          <Text>
+      <Box h="500px" position="relative" align="center">
+        <BannerContinent />
+        <Text
+          position="absolute"
+          top="82%"
+          left="16%"
+          transform="translate(-50%, -50%)"
+          fontWeight="600"
+          fontSize="5xl"
+          color="light.heading"
+        >
+          {continent}
+        </Text>
+      </Box>
+      <Flex align="center" justify="center" my="80px" ml="140px">
+        <Box w="600px" h="211px">
+          <Text fontSize="2xl" textAlign="justify">
             A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
           </Text>
         </Box>
         <Box>
           <SimpleGrid
-            minChildWidth="158px"
+            w="490px"
+            columns={3}
             spacing="4"
             mx="32"
-            m="20"
           >
-            <Box width="158px" height="145px">
-              <Image
-                objectFit="cover"
-                w="85px"
-                h="85px"
+            <Box
+              width="98px"
+              height="99px"
+              fontWeight="600"
+              align="center"
+            >
+              <Text
                 m="auto"
-                src="/images/cocktail.svg" alt="cocktail"
-              />
+                color="highlight.900"
+                fontSize="5xl"
+              >
+                50
+              </Text>
               <Text
                 color="headings_text"
-                align="center"
-                mt="6"
-                fontSize="md"
-                fontWeight="600"
+                fontSize="2xl"
               >
-                vida noturna
-          </Text>
+                países
+              </Text>
+            </Box>
+            <Box
+              width="98px"
+              height="99px"
+              fontWeight="600"
+              align="center"
+            >
+              <Text
+                m="auto"
+                color="highlight.900"
+                fontSize="5xl"
+              >
+                60
+              </Text>
+              <Text
+                color="headings_text"
+                fontSize="2xl"
+              >
+                línguas
+              </Text>
+            </Box>
+            <Box
+              width="98px"
+              height="99px"
+              fontWeight="600"
+              align="center"
+            >
+              <Text
+                m="auto"
+                color="highlight.900"
+                fontSize="5xl"
+              >
+                27
+              </Text>
+
+              <HStack spacing={2} w="250px">
+                <Text color="headings_text" fontSize="2xl">cidades +100</Text>
+                <RiInformationLine size={24} />
+              </HStack>
             </Box>
           </SimpleGrid>
         </Box>
       </Flex>
 
-      <Heading>Cidades +100</Heading>
+      <Flex mt="80px" ml="140px">
 
-      <SimpleGrid
-        spacing="4"
-        mx="32"
-        m="20"
-      >
-        <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-          <Image src={property.imageUrl} alt={property.imageAlt} />
+        <VStack align="flex-start">
+          <Heading mb="40px">Cidades +100</Heading>
 
-          <Box p="6">
-            <Box d="flex" alignItems="baseline">
-              <Badge borderRadius="full" px="2" colorScheme="teal">
-                New
-              </Badge>
-              <Box
-                color="gray.500"
-                fontWeight="semibold"
-                letterSpacing="wide"
-                fontSize="xs"
-                textTransform="uppercase"
-                ml="2"
-              >
-                {property.beds} beds &bull; {property.baths} baths
-              </Box>
-            </Box>
-
+          <SimpleGrid
+            spacing="4"
+          >
             <Box
-              mt="1"
-              fontWeight="semibold"
-              as="h4"
-              lineHeight="tight"
-              isTruncated
+              w="258px"
+              h="279px"
+              maxW="sm"
+              borderWidth="1px"
+              borderRadius="lg"
+              overflow="hidden"
             >
-              {property.title}
-            </Box>
+              <Image src={property.imageUrl} alt={property.imageAlt} />
 
-            <Box>
-              {property.formattedPrice}
-              <Box as="span" color="gray.600" fontSize="sm">
-                / wk
-              </Box>
-            </Box>
+              <Box p="6">
+                <Box d="flex" alignItems="baseline" fontWeight="600">
+                  Londres
+                </Box>
 
-            <Box d="flex" mt="2" alignItems="center">
-              {Array(5)
-                .fill("")
-                .map((_, i) => (
-                  <RiStarSFill
-                    key={i}
-                    color={i < property.rating ? "teal.500" : "gray.300"}
+                <Box
+                  mt="1"
+                  as="h4"
+                  lineHeight="tight"
+                  isTruncated
+                >
+                  Reino Unido
+                </Box>
+
+                <Box d="flex" mt="2" alignItems="center">
+                  <Image
+                    w="30px"
+                    h="30px"
+                    borderRadius="full"
+                    src={property.imageUrl}
+                    alt={property.imageAlt}
                   />
-                ))}
-              <Box as="span" ml="2" color="gray.600" fontSize="sm">
-                {property.reviewCount} reviews
+
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </Box>
-      </SimpleGrid>
-    </>
+          </SimpleGrid>
+        </VStack>
+      </Flex>
+    </Flex>
   )
 }
 
