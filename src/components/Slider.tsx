@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Box, Image, Text, Flex } from '@chakra-ui/react'
 
 import SwiperCore, { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
@@ -8,13 +9,21 @@ import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css"
 import "swiper/components/pagination/pagination.min.css"
 
-
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
 
-export function Slider() {
+interface Continent {
+  id: string;
+  continent: string;
+  title: string;
+  image: string;
+}
+
+interface SliderProps {
+  slides: Continent[];
+}
+export function Slider({ slides }: SliderProps) {
   return (
-    // <Flex maxWidth={1440} m="auto">
     <Box mx="24" mt="16" pb="10">
       <Swiper
         cssMode={true}
@@ -23,44 +32,18 @@ export function Slider() {
         mousewheel={true}
         keyboard={true}
       >
-        <SwiperSlide>
-          <Image maxWidth={1440} src="/images/europa.png" alt="Europa" objectFit="cover" />
-          <Box
-            h="auto"
-            align="center"
-            position="absolute"
-            top="50%"
-            left="50%"
-            transform="translate(-50%, -50%)"
-          >
+        {slides.map(slide => (
+          <SwiperSlide key={slide.continent}>
+            <Image maxWidth={1440} src={slide.image} alt={slide.continent} objectFit="cover" />
             <Box
-              fontWeight="bold"
-              color="light.heading"
+              h="auto"
+              align="center"
+              position="absolute"
+              top="50%"
+              left="50%"
+              transform="translate(-50%, -50%)"
             >
-              <Text
-                color="light.heading"
-                fontSize="5xl"
-                mb="4"
-              >
-                Europa
-              </Text>
-              <Text
-                color="light.info"
-                fontSize="2xl"
-              >
-                O continente mais antigo.
-              </Text>
-            </Box>
-          </Box>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image maxWidth={1440} src="/images/europa.png" alt="Europa" objectFit="cover" />
-          {/* <Box h="450px" position="relative" align="center">
               <Box
-                position="absolute"
-                top="50%"
-                left="50%"
-                transform="translate(-50%, -50%)"
                 fontWeight="bold"
                 color="light.heading"
               >
@@ -68,20 +51,23 @@ export function Slider() {
                   color="light.heading"
                   fontSize="5xl"
                   mb="4"
+                  _hover={{
+                    color: 'highlight.900'
+                  }}
                 >
-                  Europa
-              </Text>
+                  <Link href={`/${slide.id}`} passHref>{slide.continent}</Link>
+                </Text>
                 <Text
                   color="light.info"
                   fontSize="2xl"
                 >
-                  O continente mais antigo.
-              </Text>
+                  {slide.title}
+                </Text>
               </Box>
-            </Box> */}
-        </SwiperSlide>
+            </Box>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Box>
-    // </Flex>
   )
 }

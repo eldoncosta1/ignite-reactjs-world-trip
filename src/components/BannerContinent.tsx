@@ -1,6 +1,10 @@
 import { Flex, Image } from '@chakra-ui/react'
 
-export function BannerContinent() {
+interface BannerContinentProps {
+  img: string;
+}
+
+export function BannerContinent({ img }: BannerContinentProps) {
   return (
     <Flex>
       <Image
@@ -8,7 +12,7 @@ export function BannerContinent() {
         objectFit="fill"
         w="100%"
         h="500px"
-        src="/images/europe.png"
+        src={img}
         alt="banner"
       />
     </Flex>

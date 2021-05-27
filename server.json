@@ -1,0 +1,177 @@
+{
+  "continents": [
+    {
+      "id": 1,
+      "continent": "América do Norte",
+      "title": "Subcontinente que compreende a porção setentrional do continente americano.",
+      "image": "https://images.unsplash.com/photo-1469797384183-f961931553e9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "cities_plus_100": 35,
+      "countries": 20,
+      "languages": 4
+    },
+    {
+      "id": 2,
+      "continent": "América do Sul",
+      "title": "Continente que compreende a porção meridional da América.",
+      "image": "https://images.unsplash.com/photo-1570301920589-13a3c0beb04b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80",
+      "cities_plus_100": 150,
+      "countries": 60,
+      "languages": 3
+    },
+    {
+      "id": 3,
+      "continent": "África",
+      "title": "Terceiro continente mais extenso.",
+      "image": "https://images.unsplash.com/photo-1590147712664-cec66e705209?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80",
+      "cities_plus_100": 90,
+      "countries": 40,
+      "languages": 40
+    },
+    {
+      "id": 4,
+      "continent": "Europa",
+      "title": "O continente mais antigo.",
+      "image": "https://images.unsplash.com/photo-1600256698889-61ff2cd73cd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80",
+      "cities_plus_100": 74,
+      "countries": 30,
+      "languages": 7
+    },
+    {
+      "id": 5,
+      "continent": "Oceania",
+      "title": "Região composta por vários grupos de ilhas do oceano Pacífico.",
+      "image": "https://images.unsplash.com/photo-1588001400947-6385aef4ab0e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=968&q=80",
+      "cities_plus_100": 12,
+      "countries": 10,
+      "languages": 4
+    }
+  ],
+  "countries": [
+    {
+      "id": 4,
+      "city": "Roma",
+      "country": "Italy",
+      "image": "https://images.unsplash.com/photo-1515859005217-8a1f08870f59?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=999&q=80"
+    },
+    {
+      "id": 4,
+      "city": "Belgrado",
+      "country": "Serbia",
+      "image": "https://images.unsplash.com/photo-1608816747977-4d303f476571?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      "id": 4,
+      "city": "Istambul",
+      "country": "Turkey",
+      "image": "https://images.unsplash.com/photo-1527838832700-5059252407fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2143&q=80"
+    },
+    {
+      "id": 4,
+      "city": "Silema",
+      "country": "Malta",
+      "image": "https://images.unsplash.com/photo-1512679186997-081a6da4e083?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1368&q=80"
+    },
+    {
+      "id": 4,
+      "city": "Moskou",
+      "country": "Russia",
+      "image": "https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+    },
+    {
+      "id": 4,
+      "city": "Madrid",
+      "country": "Spain",
+      "image": "https://images.unsplash.com/photo-1509840841025-9088ba78a826?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      "id": 4,
+      "city": "Lisboa",
+      "country": "Portugal",
+      "image": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      "id": 4,
+      "city": "Berlim",
+      "country": "Germany",
+      "image": "https://images.unsplash.com/photo-1548783094-f92d7c8ae2d3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+    },
+    {
+      "id": 2,
+      "city": "Bariloche",
+      "country": "Argentina",
+      "image": "https://images.unsplash.com/photo-1577801599718-f4e3ad3fc794?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      "id": 2,
+      "city": "Petrolina",
+      "country": "Brasil",
+      "image": "https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+    },
+    {
+      "id": 2,
+      "city": "Barranquilla",
+      "country": "Colombia",
+      "image": "https://images.unsplash.com/photo-1576018753502-1a55b66cc44a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80"
+    },
+    {
+      "id": 2,
+      "city": "Lima",
+      "country": "Peru",
+      "image": "https://images.unsplash.com/photo-1526392060635-9d6019884377?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      "id": 1,
+      "city": "Toronto",
+      "country": "Canada",
+      "image": "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=999&q=80"
+    },
+    {
+      "id": 1,
+      "city": "Acapulco",
+      "country": "Mexico",
+      "image": "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      "id": 1,
+      "city": "Chicago",
+      "country": "USA",
+      "image": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      "id": 3,
+      "city": "Cairo",
+      "country": "Egypt",
+      "image": "https://images.unsplash.com/photo-1539768942893-daf53e448371?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+    },
+    {
+      "id": 3,
+      "city": "Maputo",
+      "country": "Mozambique",
+      "image": "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1395&q=80"
+    },
+    {
+      "id": 3,
+      "city": "Cartum",
+      "country": "Sudan",
+      "image": "https://images.unsplash.com/photo-1581922814484-0b48460b7010?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 3,
+      "city": "Lagos",
+      "country": "Nigeria",
+      "image": "https://images.unsplash.com/photo-1569706971306-de5d78f6418e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
+    },
+    {
+      "id": 5,
+      "city": "Sydney",
+      "country": "Australia",
+      "image": "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1961&q=80"
+    },
+    {
+      "id": 5,
+      "city": "Tauranga",
+      "country": "Nova Zelandia",
+      "image": "https://images.unsplash.com/photo-1619439822690-071a2d6b37a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80"
+    }
+  ]
+}

@@ -1,11 +1,29 @@
+import { GetStaticPaths, GetStaticProps } from "next";
 import { Box, Flex, SimpleGrid, Image, Text, Divider, Center, VStack } from "@chakra-ui/react";
+import ReactLoading from 'react-loading'
+
+import { api } from "../service/api";
 
 import { Header } from "../components/Header";
 import { Banner } from "../components/Banner";
 import { Slider } from "../components/Slider";
 import { TravelTypes } from "../components/TravelTypes";
+import { useRouter } from "next/dist/client/router";
 
-export default function Home() {
+interface Continent {
+  id: string;
+  continent: string;
+  title: string;
+  image: string;
+}
+
+interface HomeProps {
+  continents: Continent[];
+}
+
+export default function Home({ continents }: HomeProps) {
+  const { isFallback } = useRouter()
+
   return (
     <Flex direction="column" h="100vh">
       <Header />
@@ -35,8 +53,29 @@ export default function Home() {
 
       </Box>
 
-      <Slider />
+      {isFallback ? (
+        <ReactLoading type="bars" color="#FF57B2" />
+      ) : <Slider slides={continents} />}
 
     </Flex>
   )
+}
+
+export const getStatichPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  }
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const continents = await api
+    .get('/continents')
+    .then(response => response.data)
+
+  return {
+    props: {
+      continents,
+    }
+  }
 }
