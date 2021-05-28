@@ -33,6 +33,7 @@ export const theme = extendTheme({
       },
       "svg": {
         cursor: 'pointer',
+        display: 'inline'
       },
     }
   }

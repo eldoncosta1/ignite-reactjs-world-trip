@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Box, Image, Text, Flex } from '@chakra-ui/react'
+import { Box, Image, Text, useBreakpointValue } from '@chakra-ui/react'
 
 import SwiperCore, { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 
@@ -23,51 +23,109 @@ interface SliderProps {
   slides: Continent[];
 }
 export function Slider({ slides }: SliderProps) {
+  const isWideVersion = useBreakpointValue({
+    base: 'column',
+    md: 'column',
+    lg: 'row',
+  })
+
   return (
-    <Box mx="24" mt="16" pb="10">
-      <Swiper
-        cssMode={true}
-        navigation={true}
-        pagination={true}
-        mousewheel={true}
-        keyboard={true}
-      >
-        {slides.map(slide => (
-          <SwiperSlide key={slide.continent}>
-            <Image maxWidth={1440} src={slide.image} alt={slide.continent} objectFit="cover" />
-            <Box
-              h="auto"
-              align="center"
-              position="absolute"
-              top="50%"
-              left="50%"
-              transform="translate(-50%, -50%)"
+    <>
+      {
+        isWideVersion === 'row' ? (
+          <Box mx="24" mt="16" pb="10">
+            <Swiper
+              cssMode={true}
+              navigation={true}
+              pagination={true}
+              mousewheel={true}
+              keyboard={true}
             >
-              <Box
-                fontWeight="bold"
-                color="light.heading"
-              >
-                <Text
-                  color="light.heading"
-                  fontSize="5xl"
-                  mb="4"
-                  _hover={{
-                    color: 'highlight.900'
-                  }}
-                >
-                  <Link href={`/${slide.id}`} passHref>{slide.continent}</Link>
-                </Text>
-                <Text
-                  color="light.info"
-                  fontSize="2xl"
-                >
-                  {slide.title}
-                </Text>
-              </Box>
-            </Box>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </Box>
+              {slides.map(slide => (
+                <SwiperSlide key={slide.continent}>
+                  <Image maxWidth={1440} src={slide.image} alt={slide.continent} objectFit="cover" />
+                  <Box
+                    h="auto"
+                    align="center"
+                    position="absolute"
+                    top="50%"
+                    left="50%"
+                    transform="translate(-50%, -50%)"
+                  >
+                    <Box
+                      fontWeight="bold"
+                      color="light.heading"
+                    >
+                      <Text
+                        color="light.heading"
+                        fontSize="5xl"
+                        mb="4"
+                        _hover={{
+                          color: 'highlight.900'
+                        }}
+                      >
+                        <Link href={`/${slide.id}`} passHref>{slide.continent}</Link>
+                      </Text>
+                      <Text
+                        color="light.info"
+                        fontSize="2xl"
+                      >
+                        {slide.title}
+                      </Text>
+                    </Box>
+                  </Box>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </Box>
+        ) : (
+          <Box mt="16" pb="10">
+            <Swiper
+              cssMode={true}
+              navigation={true}
+              pagination={true}
+              mousewheel={true}
+              keyboard={true}
+            >
+              {slides.map(slide => (
+                <SwiperSlide key={slide.continent}>
+                  <Image maxWidth={1440} src={slide.image} alt={slide.continent} objectFit="cover" />
+                  <Box
+                    h="auto"
+                    align="center"
+                    position="absolute"
+                    top="50%"
+                    left="50%"
+                    transform="translate(-50%, -50%)"
+                  >
+                    <Box
+                      fontWeight="bold"
+                      color="light.heading"
+                    >
+                      <Text
+                        color="light.heading"
+                        fontSize="5xl"
+                        mb="4"
+                        _hover={{
+                          color: 'highlight.900'
+                        }}
+                      >
+                        <Link href={`/${slide.id}`} passHref>{slide.continent}</Link>
+                      </Text>
+                      <Text
+                        color="light.info"
+                        fontSize="2xl"
+                      >
+                        {slide.title}
+                      </Text>
+                    </Box>
+                  </Box>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </Box>
+        )
+      }
+    </>
   )
 }

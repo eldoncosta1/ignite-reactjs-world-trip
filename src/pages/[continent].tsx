@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 import { api } from "../service/api"
 
-import { Flex, Box, Text } from '@chakra-ui/react'
+import { Flex, Box, Text, useBreakpointValue } from '@chakra-ui/react'
 
 import { BannerContinent } from "../components/BannerContinent"
 import { Header } from "../components/Header"
@@ -30,7 +30,10 @@ interface ContinentProps {
 
 export default function Continent({ continent, countries }: ContinentProps) {
 
-  console.log(continent, countries)
+  const isWideVersion = useBreakpointValue({
+    base: true,
+    lg: false,
+  })
 
   return (
     <Flex direction="column" h="100vh">
@@ -39,8 +42,9 @@ export default function Continent({ continent, countries }: ContinentProps) {
         <BannerContinent img={continent.image} />
         <Text
           position="absolute"
-          top="77%"
-          left="140px"
+          top={isWideVersion ? "50%" : "77%"}
+          left={isWideVersion ? "50%" : "20%"}
+          transform="translate(-50%, -50%)"
           fontWeight="600"
           fontSize="5xl"
           color="light.heading"
@@ -51,7 +55,7 @@ export default function Continent({ continent, countries }: ContinentProps) {
 
       <InfoContinent continent={continent} />
 
-      <Flex m="80px auto" pb="8">
+      <Flex m={isWideVersion ? "10px" : "80px"} pb="8">
         <Cities cities={countries} />
       </Flex>
     </Flex >

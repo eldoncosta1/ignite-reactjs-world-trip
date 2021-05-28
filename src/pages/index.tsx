@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Box, Flex, SimpleGrid, Image, Text, Divider, Center, VStack } from "@chakra-ui/react";
+import { Box, Flex, Text, Divider, Center, VStack, useBreakpointValue } from "@chakra-ui/react";
 import ReactLoading from 'react-loading'
 
 import { api } from "../service/api";
@@ -24,6 +24,11 @@ interface HomeProps {
 export default function Home({ continents }: HomeProps) {
   const { isFallback } = useRouter()
 
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    md: true,
+  })
+
   return (
     <Flex direction="column" h="100vh">
       <Header />
@@ -44,7 +49,7 @@ export default function Home({ continents }: HomeProps) {
         justify="center"
         align="center"
         fontWeight="500"
-        fontSize="4xl"
+        fontSize={isWideVersion ? '4xl' : 'xl'}
       >
         <VStack>
           <Text>Vamos nessa?</Text>
